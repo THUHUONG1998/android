@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/home"
+            android:title="HOME" />
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:title="Đề thi trắc nghiệm" />
+                <item
+                    android:id="@+id/montoan"
+                    android:icon="@drawable/tracnghiem"
+                    android:title="Môn toán" />
+                <item
+                    android:id="@+id/monvatly"
+                    android:icon="@drawable/tracnghiem"
+                    android:title="Môn vật lý" />
+                <item
+                    android:id="@+id/monhoahoc"
+                    android:icon="@drawable/tracnghiem"
+                    android:title="Môn hóa học" />
+                <item
+                    android:id="@+id/monsinhhoc"
+                    android:icon="@drawable/tracnghiem"
+                    android:title="Môn sinh học" />
+            </group>
+        </menu>
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
