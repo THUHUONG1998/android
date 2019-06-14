@@ -10,10 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Đề thi môn toán học" />
-    <Button
-        android:layout_width="wrap_content"
+    <GridView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnStart"
-        android:text="Start"
-        />
+        android:numColumns="2"
+        android:id="@+id/gvExam">
+    </GridView>
 </FrameLayout>

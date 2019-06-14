@@ -14,12 +14,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.apptracnghiem.monhoc.HoaHocFragment;
 import com.example.apptracnghiem.monhoc.HomeFragment;
 import com.example.apptracnghiem.monhoc.SinhHocFragment;
 import com.example.apptracnghiem.monhoc.ToanHocFragment;
 import com.example.apptracnghiem.monhoc.VatlyFragment;
+import com.example.apptracnghiem.question.DBHelper;
+
+import java.io.IOException;
+import java.sql.SQLException;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -51,6 +56,23 @@ public class MainActivity extends AppCompatActivity
         HomeFragment homeFragment = new HomeFragment();
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.content_main, homeFragment, homeFragment.getTag()).commit();
+        DBHelper db = new DBHelper(this);
+
+//        try {
+//            db.deleteDataBase();
+//            Toast.makeText(this, "Xóa thành công", Toast.LENGTH_SHORT).show();
+//        }catch (SQLException e){
+//            e.printStackTrace();
+//            Toast.makeText(this, "Xóa thành công", Toast.LENGTH_SHORT).show();
+//        }
+        try {
+            db.createDataBase();
+            Toast.makeText(this, "Coppy thành công", Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     @Override
@@ -72,12 +94,10 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+
         if (id == R.id.action_settings) {
             return true;
         }
